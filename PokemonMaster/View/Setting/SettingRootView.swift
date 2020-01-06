@@ -11,7 +11,7 @@ import SwiftUI
 struct SettingRootView: View {
     
     var body: some View {
-        NavigationView{
+        NavigationView {
             SettingView().navigationBarTitle("设置")
         }
     }

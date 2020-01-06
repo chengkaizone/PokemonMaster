@@ -10,9 +10,11 @@ import SwiftUI
 
 struct PokemonInfoPanel: View {
     
+    @EnvironmentObject var store: Store
+    
     let model: PokemonViewModel
-    var abilities: [AbilityViewModel] {
-        AbilityViewModel.sample(pokemonID: model.id)
+    var abilities: [AbilityViewModel]? {
+        store.appState.pokemonList.abilityViewModels(for: model.pokemon)
     }
     
     var topIndicator: some View {
@@ -42,9 +44,12 @@ struct PokemonInfoPanel: View {
     }
 }
 
+#if DEBUG
 struct PokemonInfoPanel_Previews: PreviewProvider {
     static var previews: some View {
         PokemonInfoPanel(model: .sample(id: 1))
     }
 }
+
+#endif
 

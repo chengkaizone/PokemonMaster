@@ -10,39 +10,35 @@ import SwiftUI
 
 struct PokemonList: View {
     
-    @State var expandingIndex: Int?
-    @State var searchText: String = ""
+    @EnvironmentObject var store: Store
+    
+    var pokemonList: AppState.PokemonList {
+        store.appState.pokemonList
+    }
     
     var body: some View {
         ScrollView {
-            TextField("搜索", text: $searchText)
+            TextField("搜索", text: $store.appState.pokemonList.searchText.animation(nil))
             .frame(height: 40)
                 .padding(.horizontal, 25)
             ForEach(PokemonViewModel.all) { pokemon in
-                PokemonInfoRow(model: pokemon, expanded: self.expandingIndex == pokemon.id)
+                PokemonInfoRow(model: pokemon, expanded: self.pokemonList.selectionState.isExpanding(pokemon.id))
                     .onTapGesture {
-                        if self.expandingIndex == pokemon.id {
-                            self.expandingIndex = nil
-                        } else {
-                            self.expandingIndex = pokemon.id
-                        }
+                        self.store.dispatch(.toggleListSelection(index: pokemon.id))
+                        self.store.dispatch(.loadAbilities(pokemon: pokemon.pokemon))
                 }
             }
-            
-        }.overlay(
-            VStack {
-                Spacer()
-                PokemonInfoPanel(model:
-                    .sample(id: 1))
-            }.edgesIgnoringSafeArea(.bottom)
-        )
+            Spacer().frame(height: 8)
+        }
     }
     
 }
 
+#if DEBUG
 struct PokemonList_Previews: PreviewProvider {
     static var previews: some View {
-        PokemonList()
+        PokemonList().environmentObject(Store())
     }
 }
 
+#endif

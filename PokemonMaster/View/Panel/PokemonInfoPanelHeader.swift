@@ -95,9 +95,11 @@ extension PokemonInfoPanel {
     }
 }
 
+#if DEBUG
 struct PokemonInfoPanelHeader_Previews: PreviewProvider {
     static var previews: some View {
         PokemonInfoPanel.Header(model: .sample(id: 1))
     }
 }
+#endif
 

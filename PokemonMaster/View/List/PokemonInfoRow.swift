@@ -11,6 +11,7 @@ import SwiftUI
 
 struct PokemonInfoRow: View {
     
+    @EnvironmentObject var store: Store
     let model: PokemonViewModel
     let expanded: Bool
     
@@ -35,12 +36,19 @@ struct PokemonInfoRow: View {
                 Button(action: {}) {
                     Image(systemName: "star").modifier(ToolButtonModifier())
                 }
-                Button(action: {}) {
+                Button(action: {
+                    let target = !self.store.appState.pokemonList.selectionState.panelPresented
+                    self.store.dispatch(.togglePanelPresenting(presenting: target))
+                }) {
                     Image(systemName: "chart.bar").modifier(ToolButtonModifier())
                 }
-                Button(action: {}) {
+                
+                NavigationLink(destination: SafariView(url: model.detailPageURL, onFinished: {
+                    self.store.dispatch(.closeSafariView)
+                }), isActive: expanded ? $store.appState.pokemonList.isSFViewActive : .constant(false)) {
                     Image(systemName: "info.circle").modifier(ToolButtonModifier())
                 }
+                
             }.padding(.bottom, 12)
                 .opacity(expanded ? 1.0 : 0.0)
                 .frame(maxHeight: expanded ? .infinity : 0)
@@ -74,6 +82,7 @@ struct ToolButtonModifier: ViewModifier {
     }
 }
 
+#if DEBUG
 struct PokemonInfoRow_Previews: PreviewProvider {
     
     static var previews: some View {
@@ -85,3 +94,4 @@ struct PokemonInfoRow_Previews: PreviewProvider {
     }
 }
 
+#endif
