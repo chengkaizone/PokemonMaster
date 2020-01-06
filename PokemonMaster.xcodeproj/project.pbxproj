@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA22D3FB23C3060600B69EAB /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA22D3FA23C3060600B69EAB /* FileStorage.swift */; };
+		EA22D3FD23C3071200B69EAB /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA22D3FC23C3071200B69EAB /* LoginRequest.swift */; };
+		EA22D3FF23C3075200B69EAB /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA22D3FE23C3075100B69EAB /* Store.swift */; };
+		EA22D40123C3076200B69EAB /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA22D40023C3076200B69EAB /* AppState.swift */; };
+		EA22D40323C3076B00B69EAB /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA22D40223C3076B00B69EAB /* AppAction.swift */; };
+		EA22D40523C3077800B69EAB /* AppCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA22D40423C3077800B69EAB /* AppCommand.swift */; };
+		EA22D40723C3078200B69EAB /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA22D40623C3078200B69EAB /* AppError.swift */; };
+		EA22D40923C30F3D00B69EAB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA22D40823C30F3D00B69EAB /* User.swift */; };
+		EA22D40B23C311CF00B69EAB /* EmailCheckingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA22D40A23C311CF00B69EAB /* EmailCheckingRequest.swift */; };
+		EA22D40D23C3168D00B69EAB /* LoadPokemonRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA22D40C23C3168D00B69EAB /* LoadPokemonRequest.swift */; };
+		EA22D40F23C31A8500B69EAB /* LoadAbilityRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA22D40E23C31A8500B69EAB /* LoadAbilityRequest.swift */; };
 		EAEB34DE2388EAA700F79A59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEB34DD2388EAA700F79A59 /* AppDelegate.swift */; };
 		EAEB34E02388EAA700F79A59 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEB34DF2388EAA700F79A59 /* SceneDelegate.swift */; };
 		EAEB34E22388EAA700F79A59 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEB34E12388EAA700F79A59 /* ContentView.swift */; };
@@ -96,6 +107,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EA22D3FA23C3060600B69EAB /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
+		EA22D3FC23C3071200B69EAB /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		EA22D3FE23C3075100B69EAB /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		EA22D40023C3076200B69EAB /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		EA22D40223C3076B00B69EAB /* AppAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
+		EA22D40423C3077800B69EAB /* AppCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCommand.swift; sourceTree = "<group>"; };
+		EA22D40623C3078200B69EAB /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		EA22D40823C30F3D00B69EAB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EA22D40A23C311CF00B69EAB /* EmailCheckingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailCheckingRequest.swift; sourceTree = "<group>"; };
+		EA22D40C23C3168D00B69EAB /* LoadPokemonRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPokemonRequest.swift; sourceTree = "<group>"; };
+		EA22D40E23C31A8500B69EAB /* LoadAbilityRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadAbilityRequest.swift; sourceTree = "<group>"; };
 		EAEB34DA2388EAA700F79A59 /* PokemonMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAEB34DD2388EAA700F79A59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAEB34DF2388EAA700F79A59 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -197,6 +219,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA22D3F623C305C400B69EAB /* State */ = {
+			isa = PBXGroup;
+			children = (
+				EA22D3F923C305EB00B69EAB /* FileIO */,
+				EA22D3F823C305E100B69EAB /* Networking */,
+				EA22D3F723C305D000B69EAB /* DataFlow */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		EA22D3F723C305D000B69EAB /* DataFlow */ = {
+			isa = PBXGroup;
+			children = (
+				EA22D3FE23C3075100B69EAB /* Store.swift */,
+				EA22D40023C3076200B69EAB /* AppState.swift */,
+				EA22D40223C3076B00B69EAB /* AppAction.swift */,
+				EA22D40423C3077800B69EAB /* AppCommand.swift */,
+				EA22D40623C3078200B69EAB /* AppError.swift */,
+			);
+			path = DataFlow;
+			sourceTree = "<group>";
+		};
+		EA22D3F823C305E100B69EAB /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				EA22D3FC23C3071200B69EAB /* LoginRequest.swift */,
+				EA22D40A23C311CF00B69EAB /* EmailCheckingRequest.swift */,
+				EA22D40C23C3168D00B69EAB /* LoadPokemonRequest.swift */,
+				EA22D40E23C31A8500B69EAB /* LoadAbilityRequest.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		EA22D3F923C305EB00B69EAB /* FileIO */ = {
+			isa = PBXGroup;
+			children = (
+				EA22D3FA23C3060600B69EAB /* FileStorage.swift */,
+			);
+			path = FileIO;
+			sourceTree = "<group>";
+		};
 		EAEB34D12388EAA700F79A59 = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +279,7 @@
 		EAEB34DC2388EAA700F79A59 /* PokemonMaster */ = {
 			isa = PBXGroup;
 			children = (
+				EA22D3F623C305C400B69EAB /* State */,
 				EAEB350C2388EAD900F79A59 /* JSON */,
 				EAEB35032388EAD900F79A59 /* Model */,
 				EAEB34F12388EAD900F79A59 /* Utils */,
@@ -300,6 +364,7 @@
 			children = (
 				EAEB35042388EAD900F79A59 /* ViewModel */,
 				EAEB35072388EAD900F79A59 /* DataModel */,
+				EA22D40823C30F3D00B69EAB /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -561,19 +626,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAEB355D2388EAD900F79A59 /* Ability.swift in Sources */,
+				EA22D3FB23C3060600B69EAB /* FileStorage.swift in Sources */,
 				EAEB354F2388EAD900F79A59 /* Sample.swift in Sources */,
+				EA22D3FF23C3075200B69EAB /* Store.swift in Sources */,
 				EAEB35502388EAD900F79A59 /* Helpers.swift in Sources */,
 				EAEB34DE2388EAA700F79A59 /* AppDelegate.swift in Sources */,
 				EAEB355C2388EAD900F79A59 /* Language.swift in Sources */,
 				EAEB355E2388EAD900F79A59 /* Pokemon.swift in Sources */,
+				EA22D40D23C3168D00B69EAB /* LoadPokemonRequest.swift in Sources */,
+				EA22D40923C30F3D00B69EAB /* User.swift in Sources */,
+				EA22D40F23C31A8500B69EAB /* LoadAbilityRequest.swift in Sources */,
 				EAEB34E02388EAA700F79A59 /* SceneDelegate.swift in Sources */,
 				EAEB35572388EAD900F79A59 /* PokemonList.swift in Sources */,
+				EA22D3FD23C3071200B69EAB /* LoginRequest.swift in Sources */,
 				EAEB34E22388EAA700F79A59 /* ContentView.swift in Sources */,
 				EAEB35592388EAD900F79A59 /* SettingView.swift in Sources */,
+				EA22D40B23C311CF00B69EAB /* EmailCheckingRequest.swift in Sources */,
+				EA22D40523C3077800B69EAB /* AppCommand.swift in Sources */,
+				EA22D40323C3076B00B69EAB /* AppAction.swift in Sources */,
 				EAEB35512388EAD900F79A59 /* PokemonInfoPanelHeader.swift in Sources */,
 				EAEB35522388EAD900F79A59 /* PokemonInfoPanel.swift in Sources */,
 				EAEB35552388EAD900F79A59 /* PokemonRootView.swift in Sources */,
+				EA22D40123C3076200B69EAB /* AppState.swift in Sources */,
 				EAEB35562388EAD900F79A59 /* PokemonInfoRow.swift in Sources */,
+				EA22D40723C3078200B69EAB /* AppError.swift in Sources */,
 				EAEB355A2388EAD900F79A59 /* AbilityViewModel.swift in Sources */,
 				EAEB355F2388EAD900F79A59 /* PokemonSpecies.swift in Sources */,
 				EAEB35542388EAD900F79A59 /* BlurView.swift in Sources */,
